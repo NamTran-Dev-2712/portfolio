@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased bg-white dark:bg-navy text-slate-900 dark:text-slate-100;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-indigo-600/60 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-indigo-500;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-indigo {
+    @apply bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(rgba(99, 102, 241, 0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .section-alt {
+    @apply bg-slate-50 dark:bg-slate-900;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+
+  .glow-indigo {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+  }
+
+  /* Section scroll offset for fixed header */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+}
